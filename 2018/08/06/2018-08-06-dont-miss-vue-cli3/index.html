@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>什么？错过了Vue CLI 2！你还要错过Vue CLI3？ | Hexo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="vue," />
+  
+
+  <meta name="description" content="Vue CLI 产生的背景在Vue CLI出现之前，你可能要花费好几天的时间搭建项目的开发环境，如果你事先不了解webpack，你可能会又花费大把的时间熟悉webpack。就这样，一周过去了，你的项目还没有真正启动起来。为了让开发者从纠结配置中解放出来，专注于撰写应用程序。Vue CLI也就因此而产生。它不仅确保了各种构建工具能够基于智能的默认配置即可平稳衔接，还提供了配置调整的灵活性。 Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么？错过了Vue CLI 2！你还要错过Vue CLI3？">
+<meta property="og:url" content="http://example.com/2018/08/06/2018-08-06-dont-miss-vue-cli3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue CLI 产生的背景在Vue CLI出现之前，你可能要花费好几天的时间搭建项目的开发环境，如果你事先不了解webpack，你可能会又花费大把的时间熟悉webpack。就这样，一周过去了，你的项目还没有真正启动起来。为了让开发者从纠结配置中解放出来，专注于撰写应用程序。Vue CLI也就因此而产生。它不仅确保了各种构建工具能够基于智能的默认配置即可平稳衔接，还提供了配置调整的灵活性。 Vue">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778990-1f783800-242e-11eb-8681-f33344d7a0d5.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778969-1a1aed80-242e-11eb-9d8c-d042ec636c42.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778993-1f783800-242e-11eb-8d17-c1f3e8c235a6.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778974-1be4b100-242e-11eb-9132-05d0209ea4c7.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778976-1c7d4780-242e-11eb-9142-ba662c760b2c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778971-1ab38400-242e-11eb-883f-257ca1a322c1.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778966-18e9c080-242e-11eb-87df-eec44d66af28.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778997-20a96500-242e-11eb-9165-96230508123b.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98779806-45eaa300-242f-11eb-9452-1145566cbd20.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98779816-46833980-242f-11eb-89ad-743d43889e14.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778982-1dae7480-242e-11eb-9923-5b8b51a69878.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778972-1b4c1a80-242e-11eb-9249-4a803f012815.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778984-1e470b00-242e-11eb-9d43-2094ec4ed4f3.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778978-1d15de00-242e-11eb-8fe3-bedb153157de.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98778988-1edfa180-242e-11eb-8bd1-4d078318ac8c.png">
+<meta property="article:published_time" content="2018-08-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-11T07:05:37.605Z">
+<meta property="article:author" content="mileOfSunshine">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/17926741/98778990-1f783800-242e-11eb-8681-f33344d7a0d5.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-CLI-%E4%BA%A7%E7%94%9F%E7%9A%84%E8%83%8C%E6%99%AF"><span class="toc-text">Vue CLI 产生的背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-CLI%E5%8E%86%E5%8F%B2"><span class="toc-text">Vue CLI历史</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE"><span class="toc-text">创建一个项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CLI-2-%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-text">CLI 2 的项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-base-conf-js"><span class="toc-text">webpack.base.conf.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#utils-js"><span class="toc-text">utils.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#config"><span class="toc-text">config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-loader-conf"><span class="toc-text">vue-loader.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-dev-conf-js"><span class="toc-text">webpack.dev.conf.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-prod-conf-js"><span class="toc-text">webpack.prod.conf.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#check-version-js"><span class="toc-text">check-version.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bulid-js"><span class="toc-text">bulid.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CLI-3%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-text">CLI 3的项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-cli-service-js"><span class="toc-text">vue-cli-service.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Service-js"><span class="toc-text">Service.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E7%89%B9%E6%96%B0"><span class="toc-text">新特新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CLI%E6%8F%92%E4%BB%B6%E7%9A%84%E5%87%BA%E7%8E%B0"><span class="toc-text">CLI插件的出现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B3%E5%88%BB%E5%88%9B%E5%BB%BA%E5%8E%9F%E5%9E%8B"><span class="toc-text">即刻创建原型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%97%B6%E6%97%A0%E9%9C%80Eject"><span class="toc-text">配置时无需Eject</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2"><span class="toc-text">使用图形化界面</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-text">插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96"><span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-text">任务</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-2018-08-06-dont-miss-vue-cli3" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">什么？错过了Vue CLI 2！你还要错过Vue CLI3？</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.08.06</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>mileOfSunshine</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="Vue-CLI-产生的背景"><a href="#Vue-CLI-产生的背景" class="headerlink" title="Vue CLI 产生的背景"></a>Vue CLI 产生的背景</h1><p>在<code>Vue CLI</code>出现之前，你可能要花费好几天的时间搭建项目的开发环境，如果你事先不了解<code>webpack</code>，你可能会又花费大把的时间熟悉<code>webpack</code>。就这样，一周过去了，你的项目还没有真正启动起来。<br>为了让开发者从纠结配置中解放出来，专注于撰写应用程序。<code>Vue CLI</code>也就因此而产生。它不仅确保了各种构建工具能够基于智能的默认配置即可平稳衔接，还提供了配置调整的灵活性。</p>
+<h1 id="Vue-CLI历史"><a href="#Vue-CLI历史" class="headerlink" title="Vue CLI历史"></a>Vue CLI历史</h1><p><code>Vue CLI </code>到目前为止经历了两个大版本，<code>CLI 2</code> 和 <code>CLI 3</code>。很多人可能会好奇从 <code>CLI 2</code>升级到<code>CLI 3</code>会有哪些新的改变，接下来就一边回顾<code>CLI 2</code>，一边为大家解读<code>CLI 3</code>的新特性。</p>
+<h1 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h1><p><code>CLI 2</code>和<code>CLI 3</code>第一个区别是npm包的包名，<code>CLI 3</code>并没有沿用<code>CLI 2</code>的<code>vue-cli</code>，而是另起为<code>@vue/cli</code>。创建项目方面也发生了变化，<code>CLI 2</code> 可以选择根据模板初始化项目，而<code>CLI 3</code>并未重新开发模板，如果开发者想要像<code>CLI 2</code>一样使用模板初始化项目，可全局安装一个桥接工具<code>@vue/cli-init</code>。</p>
+<p>1、<code>CLI 2</code> 全局安装并创建项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install -g vue-cli</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">npm install -g vue-cli@x.x.x // 指定安装某一版本</span><br><span class="line"></span><br><span class="line">vue init &lt;template-name&gt; &lt;project-name&gt;</span><br><span class="line"><span class="comment"># 例如：vue init webpack vue-test</span></span><br></pre></td></tr></table></figure>
+<p><em>注意：这里的<code>CLI 2</code>是2.9.6。</em></p>
+<p><code>&lt;template-name&gt;</code>：表示模板名称，可以通过vue list查看可用的模板，在这里官方提供了6种模板，分别为：</p>
+<ul>
+<li>  <code>browserify</code>——一个全面的<code>Browserify + vueify</code> 的模板，运行起来带有热重载，保存时 lint 校验，单元测试。</li>
+<li><code>browserify-simple</code>——一个简单<code>Browserify + vueify</code>的模板，不包含其他功能，让你快速的搭建vue的开发环境。</li>
+<li><code>pwa</code>——一个基于<code>webpack</code>模板的渐进式的网页应用程序模板。</li>
+<li><code>simple</code>——一个最简单的单页应用模板。</li>
+<li><code>webpack</code>——一个全面的<code>webpack + vue-loader</code>的模板，运行起来带有热重载，保存时 lint 校验和CSS扩展。</li>
+<li><code>webpack-simple</code>——一个简单<code>webpack + vue-loader</code>的模板，能让你快速搭建一个vue的开发环境。</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/17926741/98778990-1f783800-242e-11eb-8681-f33344d7a0d5.png" alt="官方提供的6种模板"></p>
+<p>初始化过程中会确认项目的项目名、作者等信息，大家可根据需求自行修改。</p>
+<p>2、<code>CLI 3</code>全局安装并创建一个项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn global add @vue/cli</span><br><span class="line"><span class="comment"># 创建项目</span></span><br><span class="line">vue create &lt;project-name&gt;</span><br><span class="line"><span class="comment"># 例如：vue create vue-3.0-demo</span></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 使用init 初始化项目</span></span><br><span class="line">npm install -g @vue/cli-init</span><br><span class="line"><span class="comment"># `vue init` 的运行效果将会跟 `vue-cli@2.x` 相同</span></span><br><span class="line">vue init webpack vue-3.0-demo</span><br></pre></td></tr></table></figure>
+
+<p>当我们用<code>CLI 3</code>的方式创建项目，输入<code>vue create vue-3.0-demo</code>命令后，你会发现在创建项目的路上总是有位“记者大哥”横路拦截，问你这问你那，你还必须做出选择。</p>
+<hr>
+<p>记者大哥：“欢迎进入<code>CLI 3</code>的世界，首先你得选取一个 preset。选择默认的设置可以快速创建一个新项目的原型，而手动设置则提供了更多的选择。你是选择默认配置，还是手动选择特性呢？”</p>
+<p>你：（心里活动：<code>“来都来了，为何不看看记者大哥到底搞什么鬼”</code>）“我选择了手动选择属性”</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98778969-1a1aed80-242e-11eb-9d8c-d042ec636c42.png" alt="手动选取特性"></p>
+<p>你：什么鬼？还给我来个多选题！首先<code>Babel</code>是必要的，不然拿什么来转换<code>ES6</code>语法，<code>TypeScript</code>？不会，略过。渐进式的程序应用，暂时也不涉及这个。<code>Router</code>勾上，作为一个移动M站，得有人来管理路由呀。<code>Vuex</code>一个状态管理器，后期要用再加上吧，反正也跑不了。css 预处理器，习惯使用<code>Less</code>，也加一。<code>Linter / Formatter</code>也加一，作为一个团队，没有人统一代码风格可不行。最后两个分别是单元测试和端对端测试，这里我就不加上了，没用过，期待今后有大神分享。</p>
+<p>选择完特性后，你以为就结束了，没想到，一步选错步步要你选。</p>
+<p>对于css预处理器方面，你毅然决然选择了<code>Less</code>；<br>但<code>linter / formatter</code> 配置，你懵逼了。这都是什么？？记者大哥介绍了一下：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/eslint/eslint">ESLint</a> 是一个语法规则和代码风格的检查工具，可以检测出你代码中潜在的问题，可以保证写出语法正确和风格统一的代码。<br><img src="https://user-images.githubusercontent.com/17926741/98778993-1f783800-242e-11eb-8d17-c1f3e8c235a6.png" alt="选择linter配置.png"></p>
+<ul>
+<li><code>ESLint with error prevention only</code>——只检测错误。</li>
+<li><code>ESLint + Airbnb config</code>——独角兽公司的<a target="_blank" rel="noopener" href="https://github.com/airbnb/javascript">Airbnb</a>，有人评价说“这是一份最合理的JavaScript编码规范”，它几乎涵盖了JavaScript的各个方面。</li>
+<li><code>ESLint + Standard config</code>——<a target="_blank" rel="noopener" href="https://github.com/standard/standard">standardJs</a>一份强大的JavaScript编码规范，自带linter和自动代码纠正。没有配置。自动格式化代码。可以在编码早期发现规范问题和低级错误。</li>
+<li><code>ESLint + Prettier</code>—— <a target="_blank" rel="noopener" href="https://github.com/prettier/prettier">Prettier</a> 作为代码格式化工具，能够统一整个团队的代码风格。</li>
+</ul>
+<p>等他介绍完，你心里大概有点谱了，这里你选择了 <code>ESLint + Standard config</code>。</p>
+<p>lint有两种检查时机，一是用户保存文件的时候，二是用户提交文件到git的时候。你就选了<code> Lint on save</code>，有错及时解决嘛。</p>
+<p>终于“记者大哥”告诉你接下来这个问题是最后一个问题咯。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98778974-1be4b100-242e-11eb-9132-05d0209ea4c7.png"></p>
+<p>记者大哥：你是喜欢把Babel、ESLint等配置信息全放在package.json文件里呢，还是单独文件管理？</p>
+<p>你：一个一个文件比较好，根据文件名就知道这是谁的配置，方便维护。</p>
+<p>记者大哥：那你是否想把今天你手动选择的preset保存为未来项目的preset呢？</p>
+<p>你：<br><img src="https://user-images.githubusercontent.com/17926741/98778976-1c7d4780-242e-11eb-9142-ba662c760b2c.png" alt="说好的最后一个呢！！"></p>
+<p>……保存！</p>
+<hr>
+<p><strong>温馨提示</strong>：<em>如果你是用windows，在进行创建项目的时候，最好使用cmd，在cmd里你可以通过箭头上下选择和空格选中。如果你用git bash 可能会出现箭头和空格都没有请选择和选中作用。</em></p>
+<p>这里通过一个漫长的对话我们自定义的一个preset，此时如果你需要创建新工程，这时候你就会发现多了一个preset，就是最初你自己设置的。你可以选择自己之前保存preset的，也可以再次开启“采访模式”。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98778971-1ab38400-242e-11eb-883f-257ca1a322c1.png" alt="新添的preset"></p>
+<h2 id="CLI-2-的项目结构"><a href="#CLI-2-的项目结构" class="headerlink" title="CLI 2 的项目结构"></a>CLI 2 的项目结构</h2><p><img src="https://user-images.githubusercontent.com/17926741/98778966-18e9c080-242e-11eb-87df-eec44d66af28.png" alt="vue cli 2.9.6项目结构.png"><br>对于<code>CLI 2</code>这个项目结构，主要的也是最重要的在于bulid和config者两个目录。bulid是项目构建的相关代码，config是项目开发环境配置。</p>
+<p>接下来就先从<code>webpack.base.conf.js</code>开始依次介绍build和config两个目录下的相关功能。</p>
+<h3 id="webpack-base-conf-js"><a href="#webpack-base-conf-js" class="headerlink" title="webpack.base.conf.js"></a>webpack.base.conf.js</h3><p><code>webpack.base.conf.js</code>是webpack的基础配置，是dev和prod的公共配置文件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> utils = <span class="built_in">require</span>(<span class="string">&#x27;./utils&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">&#x27;../config&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> vueLoaderConfig = <span class="built_in">require</span>(<span class="string">&#x27;./vue-loader.conf&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>path——该模块提供了一些用于处理文件路径的小工具</li>
+<li>utils——给整个CLI提供方法</li>
+<li>config——开发环境的配置</li>
+<li>vueLoaderConfig——分析是否是生产环境，然后将根据不同的环境来加载配置功能</li>
+</ul>
+<p>在这个文件里一共实现了两个方法。一是合并path路径的，另一个是创建Eslint的Rules。而剩余部分就是webpack的基础配置，这里简化了webpack结构，简化的结果其实就是webpack的一个骨架，如果在配置上遇到问题，可去<a target="_blank" rel="noopener" href="http://webpack.github.io/">webpack</a>查证。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;&#125;, <span class="comment">// 编译入口文件</span></span><br><span class="line">  output: &#123;&#125;, <span class="comment">// 编译输出路径</span></span><br><span class="line">  resolve: &#123;&#125;, <span class="comment">// 一些解决方案配置</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    <span class="comment">// 不同类型文件加载器配置</span></span><br><span class="line">    rules: []</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">  <span class="comment">// 这些选项用于配置polyfill或mock某些node.js全局变量和模块。</span></span><br><span class="line">  <span class="comment">// 这可以使最初为nodejs编写的代码可以在浏览器端运行</span></span><br><span class="line">  node: &#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于path有兴趣的可前往<a target="_blank" rel="noopener" href="https://nodejs.org/api/path.html">node</a>学习，接下来重点介绍下<code>utils.js</code>，<code>config</code>和<code>vue-loader.conf</code>。</p>
+<h3 id="utils-js"><a href="#utils-js" class="headerlink" title="utils.js"></a>utils.js</h3><p>utils.js文件中总共实现了4个方法：<code>assetsPath</code>、<code>cssLoaders</code>、<code>styleLoaders</code>、<code>createNotifierCallback</code>。</p>
+<ul>
+<li>assetsPath——返回不同环境下的static目录位置</li>
+<li>cssLoaders——为不同的css预处理器提供一个统一的生成方式</li>
+<li>styleLoaders——为那些独立的style文件创建加载器配置</li>
+<li>createNotifierCallback——以类似浏览器的通知的形式展示信息</li>
+</ul>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p>config关键文件是<code>index.js</code>。这个文件是开发环境和生产环境的基本配置。在这个文件里开发者可在dev设置开发环境的静态路径、本地服务器配置项、Eslint、SourceMaps和代理，也可在build设置生产环境是否开启gzip压缩，以及压缩后缀名的设置等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  dev: &#123;...&#125;,</span><br><span class="line">  build: &#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="vue-loader-conf"><a href="#vue-loader-conf" class="headerlink" title="vue-loader.conf"></a>vue-loader.conf</h3><p>这个文件的内容相对比较少。首先，vue文件中的css loader将在生产环境下把css文件抽取到一个独立的文件中；其次是根据不同的环境，引入不同的source map配置文件；最后设置是否开启缓存破坏。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span></span><br><span class="line"><span class="keyword">const</span> utils = <span class="built_in">require</span>(<span class="string">&#x27;./utils&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">&#x27;../config&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> isProduction = process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span></span><br><span class="line"><span class="keyword">const</span> sourceMapEnabled = isProduction</span><br><span class="line">  ? config.build.productionSourceMap</span><br><span class="line">  : config.dev.cssSourceMap</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  loaders: utils.cssLoaders(&#123;</span><br><span class="line">    sourceMap: sourceMapEnabled,</span><br><span class="line">    extract: isProduction</span><br><span class="line">  &#125;),</span><br><span class="line">  cssSourceMap: sourceMapEnabled,</span><br><span class="line">  cacheBusting: config.dev.cacheBusting,</span><br><span class="line">  transformToRequire: &#123;</span><br><span class="line">    video: [<span class="string">&#x27;src&#x27;</span>, <span class="string">&#x27;poster&#x27;</span>],</span><br><span class="line">    source: <span class="string">&#x27;src&#x27;</span>,</span><br><span class="line">    img: <span class="string">&#x27;src&#x27;</span>,</span><br><span class="line">    image: <span class="string">&#x27;xlink:href&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于webpack公共配置讲完了，接下来我们就一起学习下在dev和prod环境各自的配置吧。</p>
+<h3 id="webpack-dev-conf-js"><a href="#webpack-dev-conf-js" class="headerlink" title="webpack.dev.conf.js"></a>webpack.dev.conf.js</h3><p>这个文件引入了<code>webpack-merge</code>，意在将公共配置文件和dev配置合并。从代码里我们可以发现，dev环境又新增了一些配置项。</p>
+<ul>
+<li>给独立的style文件添加了sourceMap功能，有了它，出错的时候，除错工具将直接显示原始代码，而不是转换后的代码。</li>
+<li>引入devtool。</li>
+<li>配置devServer，包括热部署、代理、启动程序的时候自动在浏览器打开主页面等。</li>
+<li>新增一些插件，包括热替换、<code>webpack.NamedModulesPlugin</code>在热加载时直接返回更新文件名、<code>html-webpack-plugin</code>生成html文件等。</li>
+</ul>
+<p>最后一个函数是为了确保启动程序时，如果端口被占用时，会通过portfinder来发布新的端口。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">const</span> devWebpackConfig = merge(baseWebpackConfig, &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123; ... &#125;,</span><br><span class="line">  devtool: config.dev.devtool,</span><br><span class="line">  devServer: &#123; ... &#125;,</span><br><span class="line">  plugins: [ ... ]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; ... &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="webpack-prod-conf-js"><a href="#webpack-prod-conf-js" class="headerlink" title="webpack.prod.conf.js"></a>webpack.prod.conf.js</h3><p>相比 <code>webpack.dev.conf.js</code>，这个文件多引入了几个依赖，主要是为了压缩CSS和JS。在文件配置上多了一个output，将js文件打包成多个chuck，用hash值命名，来解决缓存策略。</p>
+<p>到这里<code>CLI 2</code>的整个配置也就接近尾声了。剩下的还有<code>check-version.js</code>和<code>bulid.js</code>两个文件。</p>
+<h3 id="check-version-js"><a href="#check-version-js" class="headerlink" title="check-version.js"></a>check-version.js</h3><p>这个文件主要是用来检测当前环境中的node和npm版本和我们需要的是否一致的。</p>
+<h3 id="bulid-js"><a href="#bulid-js" class="headerlink" title="bulid.js"></a>bulid.js</h3><p>这个文件刚开始通过<code>check-versions</code>判断当前的node和npm版本号，如果现有的npm或者node的版本比定义的版本低，则生成一段警告。接下来，先删除打包目标目录下的文件，再进行打包，直至打包完成。</p>
+<p>我们走马观花的学习了<code>CLI 2</code>的配置，估计大家也都累了。那接下来就来一段采访吧~~期待不，哈哈。</p>
+<h2 id="CLI-3的项目结构"><a href="#CLI-3的项目结构" class="headerlink" title="CLI 3的项目结构"></a>CLI 3的项目结构</h2><p><img src="https://user-images.githubusercontent.com/17926741/98778997-20a96500-242e-11eb-9165-96230508123b.png" alt="CLI 3项目结构.png"></p>
+<p>从<code>CLI 3</code>的整个项目结构我们可以发现，这个结构很简单，没有相关的配置文件或复杂的目录结构。<code>CLI 3</code>仅生成构建应用程序所需的文件，让使用者不用关心这些工具的具体配置，从而降低了工具的使用难度。</p>
+<p>其实通过阅读<code>CLI 3</code>的官方文档，你可能已经知道，官方内置了一个CLI服务（<code>@vue/cli-service</code>），作为一个开发环境的依赖，局部安装在<code>@vue/cli</code>创建的项目中。如果你真想修改webpack的相关配置，可在项目的根目录下（和<code>package.json同级</code>）创建一个vue.config.js配置文件，这个文件一旦存在就会被<code>@vue/cli-service</code>自动加载。也可直接使用<code>package.json</code>中的<code>vue</code>字段。</p>
+<blockquote>
+<p>一个没有好奇心的程序猿，不是一个更好的程序猿。</p>
+</blockquote>
+<p>如果你已经满足于官方的介绍，那也就到此结束漫长的阅读之旅啦（偷偷告诉你后面还有新特性的精彩内容）。如果你也像我一样，充满了好奇心，就跟我再去探索一番。</p>
+<p>从<code>CLI 2</code>到<code>CLI 3</code>，初期可能没有官方文档。如果你真想探个究竟，可以从启动项目入手。</p>
+<p><code>CLI 2</code>启动方式是<code>webpack-dev-server --inline --progress --config build/webpack.dev.conf.js</code><br>这里用<code>webpack-dev-server</code>搭一个服务。</p>
+<ul>
+<li>–inline：启动inline模式来自动刷新页面</li>
+<li>–progress：显示打包的进度</li>
+<li>–config build/webpack.dev.conf.js：指定要用的是哪个配置文件</li>
+</ul>
+<p><code>CLI 3</code>启动方式是<code>vue-cli-service serve</code></p>
+<p><code>vue-cli-service</code>就是CLI服务，你可全局搜索一下，位于<code>node_modules\@vue\cli-service\bin</code></p>
+<h3 id="vue-cli-service-js"><a href="#vue-cli-service-js" class="headerlink" title="vue-cli-service.js"></a>vue-cli-service.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> semver = <span class="built_in">require</span>(<span class="string">&#x27;semver&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; error &#125; = <span class="built_in">require</span>(<span class="string">&#x27;@vue/cli-shared-utils&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> requiredVersion = <span class="built_in">require</span>(<span class="string">&#x27;../package.json&#x27;</span>).engines.node</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> Service = <span class="built_in">require</span>(<span class="string">&#x27;../lib/Service&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> service = <span class="keyword">new</span> Service(process.env.VUE_CLI_CONTEXT || process.cwd())</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rawArgv = process.argv.slice(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">const</span> args = <span class="built_in">require</span>(<span class="string">&#x27;minimist&#x27;</span>)(rawArgv)</span><br><span class="line"><span class="keyword">const</span> command = args._[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">service.run(command, args, rawArgv).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  error(err)</span><br><span class="line">  process.exit(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这个文件首先是判断了当前node的版本和<code>vue-cli-service</code>要求的版本是否一致，如果版本太低就得升级node版本。</p>
+<p>紧接着就起了个服务，这个服务是位于<code>lib/Service</code>。</p>
+<h3 id="Service-js"><a href="#Service-js" class="headerlink" title="Service.js"></a>Service.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">loadUserOptions () &#123;</span><br><span class="line">    <span class="comment">// vue.config.js</span></span><br><span class="line">    <span class="keyword">let</span> fileConfig, pkgConfig, resolved, resovledFrom</span><br><span class="line">    <span class="keyword">const</span> configPath = (</span><br><span class="line">      process.env.VUE_CLI_SERVICE_CONFIG_PATH ||</span><br><span class="line">      path.resolve(<span class="built_in">this</span>.context, <span class="string">&#x27;vue.config.js&#x27;</span>)</span><br><span class="line">    )</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">// package.vue</span></span><br><span class="line">    pkgConfig = <span class="built_in">this</span>.pkg.vue</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (fileConfig) &#123;</span><br><span class="line">      <span class="keyword">if</span> (pkgConfig) &#123;</span><br><span class="line">        ...</span><br><span class="line">      &#125;</span><br><span class="line">      resolved = fileConfig</span><br><span class="line">      resovledFrom = <span class="string">&#x27;vue.config.js&#x27;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pkgConfig) &#123;</span><br><span class="line">      resolved = pkgConfig</span><br><span class="line">      resovledFrom = <span class="string">&#x27;&quot;vue&quot; field in package.json&#x27;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      resolved = <span class="built_in">this</span>.inlineOptions || &#123;&#125;</span><br><span class="line">      resovledFrom = <span class="string">&#x27;inline options&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> resolved</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>在<code>loadUserOptions</code>这个函数中，你可以看到官方提到的<code>vue.config.js</code>。<br>这个函数主要是加载用户的配置。如果<code>vue.config.js</code>和<code>package.json</code>的vue字段同时存在，会忽略<code>package.json</code>的vue字段配置，而选取<code>vue.config.js</code>的配置。</p>
+<p>这里粗略介绍了何处加载了  vue.confg.js  文件，有兴趣可以继续深究。经过安装CLI、创建项目到整个项目结构介绍，我们可以大致了解了两者的区别。接下来大家一起围观一下<code>CLI 3</code>给我们带来的哪些新特性吧<del>~</del></p>
+<h2 id="新特新"><a href="#新特新" class="headerlink" title="新特新"></a>新特新</h2><h3 id="CLI插件的出现"><a href="#CLI插件的出现" class="headerlink" title="CLI插件的出现"></a>CLI插件的出现</h3><p>据我所知，在<code>CLI 3</code>之前是没有CLI插件这个概念的，人们在开发Vue项目时，若是需要实现功能都是引用npm的相关包。<code>CLI 3</code>的出现，带来了CLI插件这个概念，也带来了统一的命名方式：<code>@vue/cli-plugin-</code>（内建插件）/ <code>vue-cli-plugin-</code>（社区插件）开头。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98779806-45eaa300-242f-11eb-9452-1145566cbd20.png" alt="CLI 3出现前包名"></p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98779816-46833980-242f-11eb-89ad-743d43889e14.png" alt="CLI插件"></p>
+<h3 id="即刻创建原型"><a href="#即刻创建原型" class="headerlink" title="即刻创建原型"></a>即刻创建原型</h3><p>有时候你想快速创建一个原型，不需要添加一大堆样板。Vue CLI就提供了一个运行原型的开发服务器。</p>
+<p>要想使用这个开发服务器，前提是安装<code>@vue/cli-service-global</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli-service-global</span><br></pre></td></tr></table></figure>
+<p>你可以用IDE创建.vue文件，并添加vue代码。如果你对命令行掌握良好，也能轻松创建。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;hello world&#x27;</span> &gt; src/views/HelloWorld.vue</span><br></pre></td></tr></table></figure>
+<p>然后将HelloWorld.vue 修改为标准的vue文件结构就行。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>紧接着你就可以运行<code>vue serve src/views/HelloWorld.vue</code> 就能看效果啦~</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98778982-1dae7480-242e-11eb-9923-5b8b51a69878.png" alt="快速原型开发"></p>
+<h3 id="配置时无需Eject"><a href="#配置时无需Eject" class="headerlink" title="配置时无需Eject"></a>配置时无需Eject</h3><p>如果你曾经是一位React的忠实用户，或许使用过<a target="_blank" rel="noopener" href="https://github.com/facebookincubator/create-react-app">create-react-app</a>（react的脚手架），那你对eject的理解可能就很深刻了。可惜小女不才，早期与React只有一面之缘，也就没此机会接触<code>create-react-app</code>。为了理解eject到底是何物，我查看了react的相关文档，终于明白了。<br>在react中，使用CRA（ <code>create-react-app</code>简称）创建完项目，我们可以在package.json看到这里一个script命令。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;eject&quot;: &quot;react-scripts eject&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行完<code>npm run eject</code>会将封装在CRA里的配置全部<em>反编译</em>到当前项目，换句话就是把之前好不容易藏好了config文件暴露出来了，用户也就获取到了控制权，想怎么改随你。这样<code>react-scripts</code>就以文件的形式存在于项目中，就无法升级啦。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># eject 后项目根目录下会出现 config 文件夹，里面就包含了 webpack 配置</span><br><span class="line">config</span><br><span class="line">├── env.js</span><br><span class="line">├── jest</span><br><span class="line">│   ├── cssTransform.js</span><br><span class="line">│   └── fileTransform.js</span><br><span class="line">├── paths.js</span><br><span class="line">├── polyfills.js</span><br><span class="line">├── webpack.config.dev.js &#x2F;&#x2F; 开发环境配置</span><br><span class="line">├── webpack.config.prod.js &#x2F;&#x2F; 生产环境配置</span><br><span class="line">└── webpackDevServer.config.js</span><br></pre></td></tr></table></figure>
+<p><strong>好在<code>CLI 3</code>并没有像CRA一样，开发者你要是想自己修改配置，也是可以的，我不需要你eject，你想改就去vue.config.js里改吧。</strong><br><img src="https://user-images.githubusercontent.com/17926741/98778972-1b4c1a80-242e-11eb-9249-4a803f012815.png"></p>
+<p>如果你想看看默认的webpack配置，可执行<code>vue inspect</code>查看，默认情况下，会将配置输出到控制台，你也可以将结果指向一个文件，例如：<code>vue inspect &gt; webpack.config.js</code>。</p>
+<h3 id="使用图形化界面"><a href="#使用图形化界面" class="headerlink" title="使用图形化界面"></a>使用图形化界面</h3><p>图形界面化能快速引导用户创建和管理项目，这对于习惯了图形界面化的开发者来说简直就是福音。操作方式很简单，在你安装好了<code>CLI 3</code>的前提下，执行<code>vue ui</code>命令 ，会自动在浏览器打开图形界面。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98778984-1e470b00-242e-11eb-9d43-2094ec4ed4f3.png" alt="Vue CLI图形界面"></p>
+<p>创建项目的整个流程跟命令创建项目大同小异。这里介绍下一个<strong>“导入”</strong>功能，正常情况下不是用这个图形界面创建的项目是不会出现在项目列表中，如果你想把已有的项目也放在Vue CLI 图形界面管理，可将项目导入进来。导入项目到底有什么好处呢？这里就厉害了！一个项目导入进来，会按四个部分进行管理项目，分别为插件、依赖、配置和任务</p>
+<h5 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h5><p>在插件这一部分罗列了项目已安装的CLI插件，除此之外，用户还可以随时添加插件，默认推荐给你添加vue-router和vuex。更棒的是还未每个插件提供了官方文档，是不是很贴心~</p>
+<h5 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h5><p>我们都知道依赖分为开发依赖和运行依赖，在图形界面未出现时，我们要移除不用的依赖还得根据环境进行移除，移除开发依赖执行<code>npm uninstall xx --save-dev</code>，移除运行依赖<code>npm uninstall xx --save</code>。移除之前你可能都要去package.json里查看相关依赖名，很是费劲。还在图形化界面解决了这个问题，轻轻松松你就可以移除不需要得依赖。</p>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>关于vue.config.js文件的配置，在这也提供了入口。这里它分为基础配置和CSS配置，别觉得少，但这却是最基本、最经常被修改的配置。如果无法满足你根本需求，你也可以打开vue.config.js文件并参考官方配置。除此之外也提供了ESlint的相关配置。</p>
+<h5 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h5><p>笔者觉得，厉害的还是任务这一栏。这一栏目包含了<code>serve</code>、<code>build</code>、<code>lint</code>和<code>inspect</code>。项目的运行情况、数据分析、编译进度、检查webpack配置等。真的很厉害有木有~<br><img src="https://user-images.githubusercontent.com/17926741/98778978-1d15de00-242e-11eb-8fe3-bedb153157de.png" alt="所有信息尽收眼底"></p>
+<p>新特性到此就介绍完毕了。初次写一篇这么长的文章，如有不足，请多见谅。感谢查阅~~<br><img src="https://user-images.githubusercontent.com/17926741/98778988-1edfa180-242e-11eb-8bd1-4d078318ac8c.png"></p>
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/">https://cli.vuejs.org/zh/guide/</a><br><a target="_blank" rel="noopener" href="https://npmjs.com/package/vue-cli">https://npmjs.com/package/vue-cli</a><br><a target="_blank" rel="noopener" href="http://zhaozhiming.github.io/blog/2018/01/08/create-react-app-override-webpack-config/">http://zhaozhiming.github.io/blog/2018/01/08/create-react-app-override-webpack-config/</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000012581869#articleHeader5">https://segmentfault.com/a/1190000012581869#articleHeader5</a><br><a target="_blank" rel="noopener" href="http://www.css88.com/archives/8405">http://www.css88.com/archives/8405</a></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="hide pull-left" href="/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/09/07/2018-09-07-quickapp-oppo-account/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">Close</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

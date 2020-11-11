@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Vue 和 React 的状态逻辑复用方案 | Hexo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="vue," />
+  
+
+  <meta name="description" content="Vue 五种逻辑复用方案目前Vue实现代码逻辑复用主要5个途径： Vuex, Mixins(混入,  Vue推荐), Hooks, HOC(高阶组件, React推荐), 函数式组件 Vuex它采用集中式存储管理应用的所有组件的状态。对大型项目来说是个很好的状态管理模式，但存在对于引入太多抽象, 导致开发时总在不同的文件之间切换, 造成组件重用更困难等问题。 Mixins混合对象可以包含任意组件选">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 和 React 的状态逻辑复用方案">
+<meta property="og:url" content="http://example.com/2019/01/16/2019-01-16-vue-and-react-multiplex/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue 五种逻辑复用方案目前Vue实现代码逻辑复用主要5个途径： Vuex, Mixins(混入,  Vue推荐), Hooks, HOC(高阶组件, React推荐), 函数式组件 Vuex它采用集中式存储管理应用的所有组件的状态。对大型项目来说是个很好的状态管理模式，但存在对于引入太多抽象, 导致开发时总在不同的文件之间切换, 造成组件重用更困难等问题。 Mixins混合对象可以包含任意组件选">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777650-19815780-242c-11eb-8a35-ddb3399cb1c5.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777658-1b4b1b00-242c-11eb-9eaa-de0e0ea2ccf1.png">
+<meta property="article:published_time" content="2019-01-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-11T06:43:04.017Z">
+<meta property="article:author" content="mileOfSunshine">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/17926741/98777650-19815780-242c-11eb-8a35-ddb3399cb1c5.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-%E4%BA%94%E7%A7%8D%E9%80%BB%E8%BE%91%E5%A4%8D%E7%94%A8%E6%96%B9%E6%A1%88"><span class="toc-text">Vue 五种逻辑复用方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vuex"><span class="toc-text">Vuex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mixins"><span class="toc-text">Mixins</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hooks"><span class="toc-text">Hooks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOC"><span class="toc-text">HOC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6-vue"><span class="toc-text">函数式组件 (vue)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%A4%8D%E7%94%A8"><span class="toc-text">模板复用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#React-%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81%E5%85%B1%E4%BA%AB%E6%96%B9%E6%A1%88"><span class="toc-text">React 三种状态共享方案</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-2019-01-16-vue-and-react-multiplex" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Vue 和 React 的状态逻辑复用方案</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.01.16</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>mileOfSunshine</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="Vue-五种逻辑复用方案"><a href="#Vue-五种逻辑复用方案" class="headerlink" title="Vue 五种逻辑复用方案"></a>Vue 五种逻辑复用方案</h1><p>目前<code>Vue</code>实现代码逻辑复用主要5个途径： <code>Vuex</code>, <code>Mixins</code>(混入,  <code>Vue</code>推荐), <code>Hooks</code>, <code>HOC</code>(高阶组件, <code>React</code>推荐), 函数式组件</p>
+<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><p>它采用集中式存储管理应用的所有组件的状态。对大型项目来说是个很好的状态管理模式，但存在对于引入太多抽象, 导致开发时总在不同的文件之间切换, 造成组件重用更困难等问题。</p>
+<h2 id="Mixins"><a href="#Mixins" class="headerlink" title="Mixins"></a>Mixins</h2><p>混合对象可以包含任意组件选项。以组件使用混合对象时，所有混合对象的选项将被混入该组件本身的选项。</p>
+<ul>
+<li>同名钩子函数将混合为一个数组，都将被调用，混合对象的钩子将在组件自身钩子之前调用</li>
+<li>当混合值为对象的选项，例如 methods 和 components 等将被混合为同一个对象。两个对象键名冲突时取组件对象的键值对。</li>
+<li>请慎重使用全局注册混合对象，一旦使用，将会影响所有之后创建的Vue实例。</li>
+</ul>
+<blockquote>
+<p>小剧场：起初<code>React</code>也是通过<code>mixins</code>实现代码复用，但后来React为了避免开发者在组件中总是要写一段相同的代码，一步步脱离<code>mixins</code>，他们认为<code>mixins</code>在<code>React</code>生态系统中不是一种好的模式。</p>
+</blockquote>
+<h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>Hooks遵循函数式编程的理念。是为了从组件中提取现有状态逻辑, 以便可以独立测试并重用。Hooks允许开发者在不更改组件层次结构的情况下重用有状态逻辑, 这样可以轻松地在许多组件之间或社区共享Hooks。</p>
+<p>现状：<a target="_blank" rel="noopener" href="https://reactjs.org/docs/hooks-intro.html">React-hooks</a>比较成熟, vue也有一个<a target="_blank" rel="noopener" href="https://github.com/yyx990803/vue-hooks">vue-hooks</a>, 但只是处于实验阶段。关于vue-hooks如何使用，尤大大在GitHub上也给出了相关示例，可以参考学习。</p>
+<blockquote>
+<p>推荐文章<br><a target="_blank" rel="noopener" href="https://juejin.im/entry/5bda51576fb9a022824c0d27">在 React 和 Vue 中尝鲜 Hooks</a></p>
+</blockquote>
+<h2 id="HOC"><a href="#HOC" class="headerlink" title="HOC"></a>HOC</h2><p>组件工厂，接受原始组件作为参数，添加完功能与业务后，返回新的组件。 React 在代码中实现复用的主要方式就是使用高阶函数。</p>
+<p><strong>现状</strong>：在React实现组件其实就是在写函数, 函数拥有的功能组件都有，故实现高阶组件也是比较简单。而vue更像是一个高度封装的函数, 缺少了一定灵活性, 写高阶组件也比较复杂，关于这块Vue官网也是简单的介绍，笔者也是搜罗阅读了一些文章，写了个简单的demo, 仅供参考。<a target="_blank" rel="noopener" href="https://codesandbox.io/s/5xp39rx4kn">Live Demo</a></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Wrapper.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Wrapper</span>(<span class="params">WrappedComponent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    props: &#123;</span><br><span class="line">      list: &#123;</span><br><span class="line">        type: <span class="built_in">Array</span>,</span><br><span class="line">        <span class="keyword">default</span>: <span class="function">() =&gt;</span> []</span><br><span class="line">      &#125;,</span><br><span class="line">      title: <span class="built_in">String</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params">h</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> h(<span class="string">&quot;div&quot;</span>, [</span><br><span class="line">        h(<span class="string">&quot;h3&quot;</span>, &#123;&#125;, <span class="built_in">this</span>.title),</span><br><span class="line">        h(</span><br><span class="line">          <span class="string">&quot;div&quot;</span>,</span><br><span class="line">          &#123;</span><br><span class="line">            class: &quot;flex-row main-align-space-around&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="built_in">this</span>.list.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> h(WrappedComponent, &#123; <span class="attr">props</span>: item &#125;);</span><br><span class="line">          &#125;)</span><br><span class="line">        )</span><br><span class="line">      ]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- app.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">anime-list</span> <span class="attr">title</span>=<span class="string">&quot;今日漫画&quot;</span> <span class="attr">:list</span>=<span class="string">&quot;animeList&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">anime-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">book-list</span> <span class="attr">title</span>=<span class="string">&quot;今日推荐书籍&quot;</span> <span class="attr">:list</span>=<span class="string">&quot;bookList&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">book-list</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Item <span class="keyword">from</span> <span class="string">&quot;./components/Item&quot;</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Wrapper <span class="keyword">from</span> <span class="string">&quot;./components/Wrapper&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> AnimeList = Wrapper(Item);</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> BookList = Wrapper(Item);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">&quot;App&quot;</span>,</span></span><br><span class="line">  components: &#123;</span><br><span class="line">    AnimeList,</span><br><span class="line">    BookList</span><br><span class="line">  &#125;,</span><br><span class="line"><span class="javascript">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line">      animeList: [],</span><br><span class="line">      bookList: []</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/17926741/98777650-19815780-242c-11eb-8a35-ddb3399cb1c5.png" alt="高阶组件效果图"></p>
+<blockquote>
+<p>推荐文章<br><a target="_blank" rel="noopener" href="http://hcysun.me/2018/01/05/%E6%8E%A2%E7%B4%A2Vue%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6/">探索Vue高阶组件</a></p>
+</blockquote>
+<h2 id="函数式组件-vue"><a href="#函数式组件-vue" class="headerlink" title="函数式组件 (vue)"></a>函数式组件 (vue)</h2><p>标记组件为functional，无状态(没有响应式数据)，无实例(没有this上下文)，<strong>组件需要的一切都是通过上下文传递</strong>，在一定程度上达到了复用。有两种方式可以定义函数式组件，一是通过<code>render function</code>形式，二是通过使用<code>单文件组件</code>。 目前对于单文件形式的函数式组件在模板编译、scoped css 和 热重载方面都得到了良好支持。 模板中的表达式会在函数式渲染上下文中求值，这就意味着在模板中，prop需要以<code>props.xx</code>的形式访问。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// render function</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  functional: <span class="literal">true</span>,</span><br><span class="line">  props: &#123;&#125;,</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params">h, &#123; props, children, slots, data, parent, listeners, injections &#125;</span>)</span> &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 单文件形式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">functional</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">&quot;data.attrs&quot;</span> <span class="attr">v-on</span>=<span class="string">&quot;listener&quot;</span>&gt;</span>&#123;&#123; parent.$someProperty &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/yv4l2rnm4x">Live Demo</a></p>
+<blockquote>
+<p>推荐文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://alligator.io/vuejs/functional-components/">Functional Components in Vue.js</a></li>
+<li><a target="_blank" rel="noopener" href="https://itnext.io/whats-the-deal-with-functional-components-in-vue-js-513a31eb72b0">What’s the deal with functional components in Vue.js?</a> <ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/daprahamian/vue-render-functions-example">demo</a></li>
+<li><a target="_blank" rel="noopener" href="https://upload-images.jianshu.io/upload_images/3152495-58990312b685ea50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">文章快照</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="模板复用"><a href="#模板复用" class="headerlink" title="模板复用"></a>模板复用</h2><p>Vuex, Mixins, hooks, HOC 都是在二级上进行高度封装，考验开发者的编程功底。目前还有一个解决复用的方法，例如阿里的<a target="_blank" rel="noopener" href="https://alibaba.github.io/ice/iceworks">飞冰</a>, 通过穷举模板，进行复用。</p>
+<h1 id="React-三种状态共享方案"><a href="#React-三种状态共享方案" class="headerlink" title="React 三种状态共享方案"></a>React 三种状态共享方案</h1><ol>
+<li><p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/render-props.html">渲染属性（Render Props）</a>: 使用一个值为函数的prop来传递需要动态渲染的nodes或组件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/higher-order-components.html">高阶组件（Higher-Order Components）</a>： 一个函数接受一个组件作为参数，经过一系列加工后，最后返回一个新的组件。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/hooks-intro.html#___gatsby">React Hooks</a> <strong>状态逻辑复用</strong>，只共享数据处理逻辑，不会共享数据本身。</p>
+<p> <strong>a. useState</strong><br>它的作用就是用来声明状态变量。useState这个函数接收的参数是我们的状态初始值（initial state），它返回了一个数组，这个数组的第[0]项是当前当前的状态值，第[1]项是可以改变状态值的方法函数。</p>
+<p> <strong>b. useEffect</strong></p>
+<ul>
+<li><p>解绑副作用：让我们传给useEffect的副作用函数返回一个新的函数即可。这个新的函数将会在组件下一次重新渲染之后执行。</p>
+</li>
+<li><p>跳过不必要的副作用： 只需要给useEffect传第二个参数即可。用第二个参数来告诉react只有当这个参数的值发生改变时，才执行我们传的副作用函数（第一个参数）。当我们第二个参数传一个空数组[]时，其实就相当于只在首次渲染的时候执行。不过这种用法可能带来bug，少用。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777658-1b4b1b00-242c-11eb-9eaa-de0e0ea2ccf1.png"></p>
+<blockquote>
+<p>推荐文章<br><a target="_blank" rel="noopener" href="https://github.com/dt-fe/weekly/blob/master/80.%E7%B2%BE%E8%AF%BB%E3%80%8A%E6%80%8E%E4%B9%88%E7%94%A8%20React%20Hooks%20%E9%80%A0%E8%BD%AE%E5%AD%90%E3%80%8B.md">精读《怎么用 React Hooks 造轮子》</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/5be3ea136fb9a049f9121014">30分钟精通React Hooks</a></p>
+</blockquote>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/12/11/2018-12-11-about-chrome-devtools/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/12/30/2019-12-30-seeking-the-balance-in-framework-design/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">Close</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
