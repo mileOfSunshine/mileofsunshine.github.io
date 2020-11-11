@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>不为人知的Chrome devtools! | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="说到chrome devtools 使用技巧，今天想和大家分享两个，网页截屏和快速引入并引用npm库。除此之外，还有一个大惊喜~ 网页截屏如何实现网页截屏，大家可能会想使用微信的截图工具就可以呀！是的，笔者往常也是这样截图的。那如何截取长页面的内容呢? 我想微信截图恐怕就无法实现了，这时候你可能会借用‘外力’，没错，我们可以使用软件FastStone Capture。那有没有不借助‘外力’也能截图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不为人知的Chrome devtools!">
+<meta property="og:url" content="http://example.com/2018/12/11/2018-12-11-about-chrome-devtools/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="说到chrome devtools 使用技巧，今天想和大家分享两个，网页截屏和快速引入并引用npm库。除此之外，还有一个大惊喜~ 网页截屏如何实现网页截屏，大家可能会想使用微信的截图工具就可以呀！是的，笔者往常也是这样截图的。那如何截取长页面的内容呢? 我想微信截图恐怕就无法实现了，这时候你可能会借用‘外力’，没错，我们可以使用软件FastStone Capture。那有没有不借助‘外力’也能截图">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777152-323d3d80-242b-11eb-8e8a-9466db06b41c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777151-310c1080-242b-11eb-94e0-09efc99cc84c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777133-2c475c80-242b-11eb-8ff7-0d1ffecb1be4.gif">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777128-2b162f80-242b-11eb-910d-8598adfc306d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777131-2baec600-242b-11eb-9ee3-1bf736bf440f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777158-336e6a80-242b-11eb-90a4-ed3fc61a7f9e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777123-29e50280-242b-11eb-9ddb-a4d60c3318a2.gif">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777154-323d3d80-242b-11eb-911a-6b66ea0d2805.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777155-32d5d400-242b-11eb-9a0d-91a3854d0450.jpg">
+<meta property="article:published_time" content="2018-12-11T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-11T08:10:19.096Z">
+<meta property="article:author" content="mileOfSunshine">
+<meta property="article:tag" content="Chrome">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/17926741/98777152-323d3d80-242b-11eb-8e8a-9466db06b41c.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-12-11-about-chrome-devtools" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/11/2018-12-11-about-chrome-devtools/" class="article-date">
+  <time datetime="2018-12-11T00:00:00.000Z" itemprop="datePublished">2018-12-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      不为人知的Chrome devtools!
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说到chrome devtools 使用技巧，今天想和大家分享两个，网页截屏和快速引入并引用npm库。除此之外，还有一个大惊喜~</p>
+<h2 id="网页截屏"><a href="#网页截屏" class="headerlink" title="网页截屏"></a>网页截屏</h2><p>如何实现网页截屏，大家可能会想使用微信的截图工具就可以呀！是的，笔者往常也是这样截图的。那如何截取长页面的内容呢? 我想微信截图恐怕就无法实现了，这时候你可能会借用‘外力’，没错，我们可以使用软件<a target="_blank" rel="noopener" href="https://faststone-capture.en.softonic.com/">FastStone Capture</a>。那有没有不借助‘外力’也能截图长图呢，答案是肯定的。 </p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777152-323d3d80-242b-11eb-8e8a-9466db06b41c.png" alt="FastStone Capture 滚动截图"></p>
+<p>那如何利用devtools实现截图呢？</p>
+<p>1、<code>F12</code>打开开发者工具;<br>2、利用快捷键 <code>ctrl + shift + p</code>调出命令行;<br>3、输入screen，选择 <code>capture full size screenshot</code>(捕捉全尺寸屏幕截图)</p>
+<p>锵锵~~ 生成当前页面的长图。是不是很惊喜，执行一个命令就完成了。<br><img src="https://user-images.githubusercontent.com/17926741/98777151-310c1080-242b-11eb-94e0-09efc99cc84c.png" alt="全尺寸效果图"></p>
+<p>有时你可能只想截取一部分内容，但内容又有些长。这时<code>capture full size screenshot</code> 和 <code>capture screenshot</code> 都不满足需求，别忘了，我们还有<code>capture node screenshot</code>。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777133-2c475c80-242b-11eb-8ff7-0d1ffecb1be4.gif" alt="捕捉节点屏幕截屏"></p>
+<p><em>温馨提示</em>：<br><code>capture full size screenshot</code> 捕捉整个网页屏幕截图<br><code>capture node screenshot</code> 捕捉节点网页屏幕截图<br><code>capture screenshot</code> 捕捉当前屏幕截图</p>
+<h2 id="快速引入并应用npm库"><a href="#快速引入并应用npm库" class="headerlink" title="快速引入并应用npm库"></a>快速引入并应用npm库</h2><p>有时候我们想学习一个库( 很有兴致的那种 )，可能往往就在环境搭建的过程中放弃了学习( 苦笑 )。今天介绍的这个想必能解决你的痛点！</p>
+<p>1、获取并添加Chrome扩展程序：<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/console-importer/hgajpakhafplebkdljleajgbpdmplhie/related">Console Importer</a><br>2、如果你想练习下 <code>lodash</code> 里的方法，你可以执行 <code>$i(&#39;lodash&#39;)</code> 将 <code>lodash</code> 库引入，接下来就可以愉快把玩工具库啦。对于学习使用某个工具库真的很方便，有木有~</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777128-2b162f80-242b-11eb-910d-8598adfc306d.png" alt="lodash练习"></p>
+<h3 id="你可能会遇到的问题"><a href="#你可能会遇到的问题" class="headerlink" title="你可能会遇到的问题?"></a>你可能会遇到的问题?</h3><p><strong>Q1: <code>$i</code> 不像预期的那样起作用</strong><br>一些网站可能已经把 <code>$i</code> 作为一个全局变量，这个扩展程序就无法重写覆盖它，这时你可以 <code>console.$i</code> 这样调用，也是一样的效果。</p>
+<p><strong>Q2: <code>$i</code> 无法导入资源</strong></p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777131-2baec600-242b-11eb-9ee3-1bf736bf440f.png" alt="lodash导入报错"></p>
+<p>出错的原因是这些网站采用了严格的内容安全政策(<code>Content Security Policy</code>)。你可以打开一个本地html，或者是用一个没有进行严格内容安全政策的网站进行 <code>$i(&#39;lodash&#39;)</code> 练习</p>
+<h2 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h2><p>想必大家在网上也看到过很多介绍console方法的文章，笔者觉得有些碎片化了。故借此机会，向大家推荐阅读<a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/">devtools的开发者手册</a>（感觉是宝藏, 虽然有一定的学习门槛）</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777158-336e6a80-242b-11eb-90a4-ed3fc61a7f9e.png" alt="如何找到devtools开发者手册"></p>
+<blockquote>
+<p>使用 Console API 可以向控制台写入信息、创建 JavaScript 配置文件，以及启动调试会话。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/console/console-reference">Console API Reference</a>介绍了<code>assert, clear, debug, dir, dirxml, error, group, groupCollapsed, groupEnd, info, log, profile, profileEnd, time, timeEnd, timeStamp, trace, warn</code>的使用，也提供了相关实例。</li>
+</ul>
+<blockquote>
+<p>Command Line API 包含一个用于执行以下常见任务的便捷函数集合：选择和检查 DOM 元素，以可读格式显示数据，停止和启动分析器，以及监控 DOM 事件。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference">Command Line Reference</a>一共介绍了21个方法:<br><code>$_, $0 - $4, $, $$, $x, clear, copy, debug, dir, dirxml, inspect, getEventListeners, keys, monitor, monitorEvents, profile and profileEnd, table, undebug, unmonitor, unmonitorEvents, values</code></li>
+</ul>
+<p>我猜有人犯懒了，链接都懒得打开啦…<br><img src="https://user-images.githubusercontent.com/17926741/98777123-29e50280-242b-11eb-9ddb-a4d60c3318a2.gif" alt="别跑，快回来学习！"></p>
+<p>那我就把 <code>devtools</code> 手册目录贴出来啦，说不好一看又感兴趣了呢~</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777154-323d3d80-242b-11eb-911a-6b66ea0d2805.png" alt="开发者手册目录"></p>
+<p>单词我们都认识，能不能学好就靠你自己啦…前面推荐的<code>Console API Reference</code>和<code>Command Line Reference</code> 已经是中文文档了哈，莫慌莫慌…</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777155-32d5d400-242b-11eb-9a0d-91a3854d0450.jpg" alt="加油！"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/12/11/2018-12-11-about-chrome-devtools/" data-id="ckhd4im9t00030lqq93wm56wa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/16/2019-01-16-vue-and-react-multiplex/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue 和 React 的状态逻辑复用方案
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/07/2018-09-07-quickapp-oppo-account/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">快应用-开通oppo账号服务艰辛之路</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E5%BA%94%E7%94%A8/" rel="tag">快应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/" rel="tag">框架设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/%E5%BF%AB%E5%BA%94%E7%94%A8/" style="font-size: 10px;">快应用</a> <a href="/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">框架设计</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/01/2020-09-01-pick-embeddable-markdown-editor/">你想 pick 哪款嵌入式 Markdown 编辑器?</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/30/2019-12-30-seeking-the-balance-in-framework-design/">读“在框架设计中寻求平衡”</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/16/2019-01-16-vue-and-react-multiplex/">Vue 和 React 的状态逻辑复用方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/2018-12-11-about-chrome-devtools/">不为人知的Chrome devtools!</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/07/2018-09-07-quickapp-oppo-account/">快应用-开通oppo账号服务艰辛之路</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 mileOfSunshine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
