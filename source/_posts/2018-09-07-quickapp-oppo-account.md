@@ -15,7 +15,6 @@ tag: 快应用
 
 ![开发者中心](https://user-images.githubusercontent.com/17926741/98777983-9e6c7100-242c-11eb-8c3e-4b8a53535168.png)
 
-<!--more-->
 
 ## OPPO开发者帐号
 
