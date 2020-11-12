@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>快应用-开通oppo账号服务艰辛之路 | mileOfSunshine</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="快应用," />
+  
+
+  <meta name="description" content="最近在开发一个快应用，其实不能说是一个快应用啦，是一个用户登录注册的功能。其中需要涉及到oppo账号授权。 这个事情还得从两个帐号说起，快应用开发者帐号和OPPO开发者帐号。 快应用开发者帐号首先先说下这个快应用开发者帐号，其作用就是绑定厂商和上传快应用。对于快应用帐号如何申请，官网和各个厂商的开发平台都有相应的文档教程，这里笔者就不介绍了。但有有一点需要提醒一下，快应用开发者帐号必须完善资料，审">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快应用-开通oppo账号服务艰辛之路">
+<meta property="og:url" content="http://example.com/2018/09/07/2018-09-07-quickapp-oppo-account/index.html">
+<meta property="og:site_name" content="mileOfSunshine">
+<meta property="og:description" content="最近在开发一个快应用，其实不能说是一个快应用啦，是一个用户登录注册的功能。其中需要涉及到oppo账号授权。 这个事情还得从两个帐号说起，快应用开发者帐号和OPPO开发者帐号。 快应用开发者帐号首先先说下这个快应用开发者帐号，其作用就是绑定厂商和上传快应用。对于快应用帐号如何申请，官网和各个厂商的开发平台都有相应的文档教程，这里笔者就不介绍了。但有有一点需要提醒一下，快应用开发者帐号必须完善资料，审">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777983-9e6c7100-242c-11eb-8c3e-4b8a53535168.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777984-9f050780-242c-11eb-9890-8df1d61559b5.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777968-9a405380-242c-11eb-99cc-e81de88fc7d2.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777980-9dd3da80-242c-11eb-9cda-af8c34cf5237.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777993-a0cecb00-242c-11eb-917c-2411693e2c6a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777986-9f9d9e00-242c-11eb-9b9a-598861fb7256.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777974-9ca2ad80-242c-11eb-920d-4205fc70acec.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777973-9c0a1700-242c-11eb-8ff9-3e250dac8fec.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777990-a0363480-242c-11eb-84f9-46e8c7af6aa3.gif">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777976-9d3b4400-242c-11eb-8d72-72d515648b20.png">
+<meta property="article:published_time" content="2018-09-07T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-12T06:20:51.749Z">
+<meta property="article:author" content="mileOfSunshine">
+<meta property="article:tag" content="快应用">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/17926741/98777983-9e6c7100-242c-11eb-8c3e-4b8a53535168.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E8%80%85%E5%B8%90%E5%8F%B7"><span class="toc-text">快应用开发者帐号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OPPO%E5%BC%80%E5%8F%91%E8%80%85%E5%B8%90%E5%8F%B7"><span class="toc-text">OPPO开发者帐号</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-2018-09-07-quickapp-oppo-account" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">快应用-开通oppo账号服务艰辛之路</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.09.07</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>mileOfSunshine</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>最近在开发一个快应用，其实不能说是一个快应用啦，是一个用户登录注册的功能。其中需要涉及到oppo账号授权。</p>
+<p>这个事情还得从两个帐号说起，<code>快应用开发者帐号</code>和<code>OPPO开发者帐号</code>。</p>
+<h2 id="快应用开发者帐号"><a href="#快应用开发者帐号" class="headerlink" title="快应用开发者帐号"></a>快应用开发者帐号</h2><p>首先先说下这个<code>快应用开发者帐号</code>，其作用就是绑定厂商和上传快应用。对于快应用帐号如何申请，官网和各个厂商的开发平台都有相应的文档教程，这里笔者就不介绍了。但有有一点需要提醒一下，快应用开发者帐号必须<strong>完善资料</strong>，审核通过了才能在顶部有<strong>开发者中心</strong>这一项，上面说到的<strong>厂商帐号绑定</strong>就在这个栏目里。如下图所示</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777983-9e6c7100-242c-11eb-8c3e-4b8a53535168.png" alt="开发者中心"></p>
+<h2 id="OPPO开发者帐号"><a href="#OPPO开发者帐号" class="headerlink" title="OPPO开发者帐号"></a>OPPO开发者帐号</h2><p>这个帐号与<code>快应用开发者帐号</code>是多对一的关系，一个<code>快应用开发者帐号</code>只能绑定一个<code>OPPO开发者帐号</code>，但一个<code>OPPO开发者帐号</code>可对应多个<code>快应用开发者帐号</code>。至于这个OPPO开发者帐号怎么用呢，这里先保留。</p>
+<p>先说下原由，为何故事因这两个帐号而起。</p>
+<hr>
+<p>事情是这样的……</p>
+<p>有一天，产品给我这两个帐号，我当时还啥也不懂，你给我就收下咯。直到开发到oppo授权阶段，我愣住了。</p>
+<p>在<code>快应用开发者帐号</code>里，绑定的是oppo帐号A（如下图），但是给我的是oppo帐号B。这两个有啥关系！！我着急了，赶紧告诉我们产品，这两个帐号没有本质的联系，是不对的。他又找了给这两个帐号的相关人员，历经波折……······…….嗯。终于找到了oppo帐号A，此时的我已经感动的老泪纵横【夸张了】。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777984-9f050780-242c-11eb-9890-8df1d61559b5.png" alt="厂商帐号绑定"></p>
+<p>所以正确的流程应该是用与<code>快应用开发者帐号</code>绑定的<code>OPPO开发者帐号</code>登录到OPPO平台进行<strong>开通帐号服务</strong>。【也许这里有人会吐槽，很简单的流程为何还写了这么多。嗯，他说的也不无道理，但是记录的目的就是防止有人也跟我一样，迷糊了一圈】</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777968-9a405380-242c-11eb-99cc-e81de88fc7d2.png" alt="开通帐号服务流程图"></p>
+<p>你是不是以为找到正确的oppo帐号A就ok。当时的我也跟你一样的想法！事实上呢，好吧！是我（们）想太多，事情并没有这么简单。</p>
+<p>我调用<code>account.authorize</code>还是获取不到授权信息。重点是获取服务提供商<code>account.getProvider()</code>都获取不到，这个数据应该不需要什么多余操作就能获取到的呀。我试了好几个安卓设备都是一样的结果，空空如也<del>~</del></p>
+<p>组里就我自己接触了快应用，也无人可解问。接着我就开始各种加群，QQ群（<code>oppo开发者交流群</code>，微信群（<code>快应用官方技术交流群</code>）。我就各种问呀问呀，虽然回答很慢（毕竟大家都有自己的工作嘛），但是都很实用。群里有各个厂商的技术大佬在，最为活跃的还属华为的技术大大，很感恩，因为他，我接触到了oppo快应用相关的技术大佬，为后期工作打下了深厚的基础。</p>
+<blockquote>
+<p>“三人行，必有我师焉”</p>
+</blockquote>
+<p>没错，接下来还是继续加群。接下来的第一个群，解决了无法获取服务提供商的问题。你猜是怎么解决的？答案很简单就是换了个快应用调试器。。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777980-9dd3da80-242c-11eb-9cda-af8c34cf5237.png" alt="what?"></p>
+<p>原因是这样的，我这个oppo手机内置的快应用运行平台是2.1的灰度版本暂时不能用联盟官网的调试器，后来是oppo技术人员单独发我一个调试器进行调试，不过他也表名，此举只是临时方案，后面会支持联盟官网的调试器。<strong>系统设置 - 应用管理 - 快应用</strong>可查看快应用版本。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777993-a0cecb00-242c-11eb-917c-2411693e2c6a.png" alt="oppo手机快应用的版本"></p>
+<p>好了，有了能调试的调试器。那就来看看账号服务是否能走通吧~</p>
+<p>无奈还是不行，好在不像之前，已经有相关错误提示啦~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fail:   code &#x3D; 200, data &#x3D; generic error</span><br></pre></td></tr></table></figure>
+<p>可行官网也没介绍这200是啥错。那我就只能厚着脸皮问oppo技术大大了，好在遇到了一群暖心的小哥哥小姐姐，被告知：要将快应用先提交（不用一定要上架），此举只是为了能申请账号服务，这里顺便提一句，原生应用和快应用申请账号服务是分开的。看到后面你就会明白这句话是啥意思啦~</p>
+<p>那接下来就是提交快应用。这次提交你可别提交一个到处bug的rpk。至少是功能完整，就差账号服务这一功能，提交完成就是坐等审核通过啦。建议你加下<code>快应用官方客服</code>的微信，这样有问题你可以直接问他，或是你的快应用提交有误之处，他们也可能及时联系到你，方便你们沟通。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777986-9f9d9e00-242c-11eb-9b9a-598861fb7256.png" alt="提交快应用"></p>
+<p>·········………·········经过漫长的审核，终于通过啦~</p>
+<p>接下来就是讲讲申请账号服务啦</p>
+<p>这里，我又加入了另一个群，没错就是关于账号服务的群。</p>
+<p>由于目前oppo关于快应用开通账号的页面还没开放，相关技术给了我线上地址，这里就不展示了。页面内容与原生应用开通账号服务的模样一般无二。如下图所示，我们申请的就是<strong>第一项推送能力项openid</strong>。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777974-9ca2ad80-242c-11eb-920d-4205fc70acec.png" alt="快应用开通账号服务"></p>
+<p>点击<code>立即开通</code>，里头长这样。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777973-9c0a1700-242c-11eb-8ff9-3e250dac8fec.png" alt="开通openid"></p>
+<p>那红框这一块如何填写呢? <code>随便填</code><br>这里笔者觉得有些粗糙了，相信今后这一块会完善好。这一点我个人觉得还是华为做的好一些，开放文档里也写的很明了。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777990-a0363480-242c-11eb-84f9-46e8c7af6aa3.gif"></p>
+<p>走到这一步就差不多了，就等审核通过啦。<br>···<br>审核通过啦，当我再次调试页面时提示我更新到最新版，可能是我刚好赶上新版调试器发布。时间总是如此的巧合。。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777976-9d3b4400-242c-11eb-8d72-72d515648b20.png" alt="v1020"></p>
+<p>更新完调试器，在调试页面。我真的感动了，调用账号授权接口拿到code了。。。(当时心情无语言表)</p>
+<p>（完）</p>
+<p><em>此文只是记录快应用账号接入的过程，仅供借鉴，随着快应用的发展，各家厂商产品的完善，大家可能不会像笔者这般纠结，如能帮助到大家，庆幸写下此文。</em></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/08/06/2018-08-06-dont-miss-vue-cli3/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/12/11/2018-12-11-about-chrome-devtools/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

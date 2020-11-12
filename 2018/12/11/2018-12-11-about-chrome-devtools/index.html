@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>不为人知的Chrome devtools! | mileOfSunshine</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Chrome," />
+  
+
+  <meta name="description" content="说到chrome devtools 使用技巧，今天想和大家分享两个，网页截屏和快速引入并引用npm库。除此之外，还有一个大惊喜~ 网页截屏如何实现网页截屏，大家可能会想使用微信的截图工具就可以呀！是的，笔者往常也是这样截图的。那如何截取长页面的内容呢? 我想微信截图恐怕就无法实现了，这时候你可能会借用‘外力’，没错，我们可以使用软件FastStone Capture。那有没有不借助‘外力’也能截图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不为人知的Chrome devtools!">
+<meta property="og:url" content="http://example.com/2018/12/11/2018-12-11-about-chrome-devtools/index.html">
+<meta property="og:site_name" content="mileOfSunshine">
+<meta property="og:description" content="说到chrome devtools 使用技巧，今天想和大家分享两个，网页截屏和快速引入并引用npm库。除此之外，还有一个大惊喜~ 网页截屏如何实现网页截屏，大家可能会想使用微信的截图工具就可以呀！是的，笔者往常也是这样截图的。那如何截取长页面的内容呢? 我想微信截图恐怕就无法实现了，这时候你可能会借用‘外力’，没错，我们可以使用软件FastStone Capture。那有没有不借助‘外力’也能截图">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777152-323d3d80-242b-11eb-8e8a-9466db06b41c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777151-310c1080-242b-11eb-94e0-09efc99cc84c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777133-2c475c80-242b-11eb-8ff7-0d1ffecb1be4.gif">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777128-2b162f80-242b-11eb-910d-8598adfc306d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777131-2baec600-242b-11eb-9ee3-1bf736bf440f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777158-336e6a80-242b-11eb-90a4-ed3fc61a7f9e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777123-29e50280-242b-11eb-9ddb-a4d60c3318a2.gif">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777154-323d3d80-242b-11eb-911a-6b66ea0d2805.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17926741/98777155-32d5d400-242b-11eb-9a0d-91a3854d0450.jpg">
+<meta property="article:published_time" content="2018-12-11T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-12T06:20:51.749Z">
+<meta property="article:author" content="mileOfSunshine">
+<meta property="article:tag" content="Chrome">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/17926741/98777152-323d3d80-242b-11eb-8e8a-9466db06b41c.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E6%88%AA%E5%B1%8F"><span class="toc-text">网页截屏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%95%E5%85%A5%E5%B9%B6%E5%BA%94%E7%94%A8npm%E5%BA%93"><span class="toc-text">快速引入并应用npm库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">你可能会遇到的问题?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A9%E8%9B%8B"><span class="toc-text">彩蛋</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-2018-12-11-about-chrome-devtools" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">不为人知的Chrome devtools!</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.12.11</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>mileOfSunshine</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </span>
+
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>说到chrome devtools 使用技巧，今天想和大家分享两个，网页截屏和快速引入并引用npm库。除此之外，还有一个大惊喜~</p>
+<h2 id="网页截屏"><a href="#网页截屏" class="headerlink" title="网页截屏"></a>网页截屏</h2><p>如何实现网页截屏，大家可能会想使用微信的截图工具就可以呀！是的，笔者往常也是这样截图的。那如何截取长页面的内容呢? 我想微信截图恐怕就无法实现了，这时候你可能会借用‘外力’，没错，我们可以使用软件<a target="_blank" rel="noopener" href="https://faststone-capture.en.softonic.com/">FastStone Capture</a>。那有没有不借助‘外力’也能截图长图呢，答案是肯定的。 </p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777152-323d3d80-242b-11eb-8e8a-9466db06b41c.png" alt="FastStone Capture 滚动截图"></p>
+<p>那如何利用devtools实现截图呢？</p>
+<p>1、<code>F12</code>打开开发者工具;<br>2、利用快捷键 <code>ctrl + shift + p</code>调出命令行;<br>3、输入screen，选择 <code>capture full size screenshot</code>(捕捉全尺寸屏幕截图)</p>
+<p>锵锵~~ 生成当前页面的长图。是不是很惊喜，执行一个命令就完成了。<br><img src="https://user-images.githubusercontent.com/17926741/98777151-310c1080-242b-11eb-94e0-09efc99cc84c.png" alt="全尺寸效果图"></p>
+<p>有时你可能只想截取一部分内容，但内容又有些长。这时<code>capture full size screenshot</code> 和 <code>capture screenshot</code> 都不满足需求，别忘了，我们还有<code>capture node screenshot</code>。</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777133-2c475c80-242b-11eb-8ff7-0d1ffecb1be4.gif" alt="捕捉节点屏幕截屏"></p>
+<p><em>温馨提示</em>：<br><code>capture full size screenshot</code> 捕捉整个网页屏幕截图<br><code>capture node screenshot</code> 捕捉节点网页屏幕截图<br><code>capture screenshot</code> 捕捉当前屏幕截图</p>
+<h2 id="快速引入并应用npm库"><a href="#快速引入并应用npm库" class="headerlink" title="快速引入并应用npm库"></a>快速引入并应用npm库</h2><p>有时候我们想学习一个库( 很有兴致的那种 )，可能往往就在环境搭建的过程中放弃了学习( 苦笑 )。今天介绍的这个想必能解决你的痛点！</p>
+<p>1、获取并添加Chrome扩展程序：<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/console-importer/hgajpakhafplebkdljleajgbpdmplhie/related">Console Importer</a><br>2、如果你想练习下 <code>lodash</code> 里的方法，你可以执行 <code>$i(&#39;lodash&#39;)</code> 将 <code>lodash</code> 库引入，接下来就可以愉快把玩工具库啦。对于学习使用某个工具库真的很方便，有木有~</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777128-2b162f80-242b-11eb-910d-8598adfc306d.png" alt="lodash练习"></p>
+<h3 id="你可能会遇到的问题"><a href="#你可能会遇到的问题" class="headerlink" title="你可能会遇到的问题?"></a>你可能会遇到的问题?</h3><p><strong>Q1: <code>$i</code> 不像预期的那样起作用</strong><br>一些网站可能已经把 <code>$i</code> 作为一个全局变量，这个扩展程序就无法重写覆盖它，这时你可以 <code>console.$i</code> 这样调用，也是一样的效果。</p>
+<p><strong>Q2: <code>$i</code> 无法导入资源</strong></p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777131-2baec600-242b-11eb-9ee3-1bf736bf440f.png" alt="lodash导入报错"></p>
+<p>出错的原因是这些网站采用了严格的内容安全政策(<code>Content Security Policy</code>)。你可以打开一个本地html，或者是用一个没有进行严格内容安全政策的网站进行 <code>$i(&#39;lodash&#39;)</code> 练习</p>
+<h2 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h2><p>想必大家在网上也看到过很多介绍console方法的文章，笔者觉得有些碎片化了。故借此机会，向大家推荐阅读<a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/">devtools的开发者手册</a>（感觉是宝藏, 虽然有一定的学习门槛）</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777158-336e6a80-242b-11eb-90a4-ed3fc61a7f9e.png" alt="如何找到devtools开发者手册"></p>
+<blockquote>
+<p>使用 Console API 可以向控制台写入信息、创建 JavaScript 配置文件，以及启动调试会话。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/console/console-reference">Console API Reference</a>介绍了<code>assert, clear, debug, dir, dirxml, error, group, groupCollapsed, groupEnd, info, log, profile, profileEnd, time, timeEnd, timeStamp, trace, warn</code>的使用，也提供了相关实例。</li>
+</ul>
+<blockquote>
+<p>Command Line API 包含一个用于执行以下常见任务的便捷函数集合：选择和检查 DOM 元素，以可读格式显示数据，停止和启动分析器，以及监控 DOM 事件。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference">Command Line Reference</a>一共介绍了21个方法:<br><code>$_, $0 - $4, $, $$, $x, clear, copy, debug, dir, dirxml, inspect, getEventListeners, keys, monitor, monitorEvents, profile and profileEnd, table, undebug, unmonitor, unmonitorEvents, values</code></li>
+</ul>
+<p>我猜有人犯懒了，链接都懒得打开啦…<br><img src="https://user-images.githubusercontent.com/17926741/98777123-29e50280-242b-11eb-9ddb-a4d60c3318a2.gif" alt="别跑，快回来学习！"></p>
+<p>那我就把 <code>devtools</code> 手册目录贴出来啦，说不好一看又感兴趣了呢~</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777154-323d3d80-242b-11eb-911a-6b66ea0d2805.png" alt="开发者手册目录"></p>
+<p>单词我们都认识，能不能学好就靠你自己啦…前面推荐的<code>Console API Reference</code>和<code>Command Line Reference</code> 已经是中文文档了哈，莫慌莫慌…</p>
+<p><img src="https://user-images.githubusercontent.com/17926741/98777155-32d5d400-242b-11eb-9a0d-91a3854d0450.jpg" alt="加油！"></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/09/07/2018-09-07-quickapp-oppo-account/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/01/16/2019-01-16-vue-and-react-multiplex/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
