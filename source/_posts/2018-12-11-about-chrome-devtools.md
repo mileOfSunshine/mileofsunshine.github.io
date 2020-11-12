@@ -16,6 +16,8 @@ tag: Chrome
 
 那如何利用devtools实现截图呢？
 
+<!--more-->
+
 1、`F12`打开开发者工具;
 2、利用快捷键 `ctrl + shift + p`调出命令行;
 3、输入screen，选择 `capture full size screenshot`(捕捉全尺寸屏幕截图)
