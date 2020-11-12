@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>读“在框架设计中寻求平衡” | mileOfSunshine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今年 JSConf.Asia 会议上，Vue.js 的作者 @尤雨溪 在关于 前端框架设计取舍 上作了分享。 分享主要从两个部分展开介绍： 职责范围（Scope）和 渲染机制（Render Mechanism）。 职责范围小的职责范围具有很好的灵活度，但关于构建抽象上要求开发者有自主学习能力。相反，大的职责范围致力于提供抽象概念，倘若抽象不适用，想改变时，却缺乏灵活度。 Vue 在职责范围这个问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读“在框架设计中寻求平衡”">
+<meta property="og:url" content="http://example.com/2019/12/30/2019-12-30-seeking-the-balance-in-framework-design/index.html">
+<meta property="og:site_name" content="mileOfSunshine">
+<meta property="og:description" content="今年 JSConf.Asia 会议上，Vue.js 的作者 @尤雨溪 在关于 前端框架设计取舍 上作了分享。 分享主要从两个部分展开介绍： 职责范围（Scope）和 渲染机制（Render Mechanism）。 职责范围小的职责范围具有很好的灵活度，但关于构建抽象上要求开发者有自主学习能力。相反，大的职责范围致力于提供抽象概念，倘若抽象不适用，想改变时，却缺乏灵活度。 Vue 在职责范围这个问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p1.ssl.qhimg.com/t01fe27088aa20d3ded.png">
+<meta property="og:image" content="https://p1.ssl.qhimg.com/t01352166f663a62c22.png">
+<meta property="og:image" content="https://p3.ssl.qhimg.com/t01712c2274c39bc718.png">
+<meta property="og:image" content="https://p1.ssl.qhimg.com/t01514e25d142756025.png">
+<meta property="og:image" content="https://p5.ssl.qhimg.com/t01df369a48ee8b05df.png">
+<meta property="og:image" content="https://p5.ssl.qhimg.com/t01a85190317eae945e.png">
+<meta property="og:image" content="https://p1.ssl.qhimg.com/t015cf5539238c56211.png">
+<meta property="og:image" content="https://p1.ssl.qhimg.com/t01dc325e2cba4ce2e2.png">
+<meta property="og:image" content="https://p1.ssl.qhimg.com/t015efdcb0ccb5fb4a3.png">
+<meta property="article:published_time" content="2019-12-30T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-12T03:33:10.425Z">
+<meta property="article:author" content="mileOfSunshine">
+<meta property="article:tag" content="框架设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p1.ssl.qhimg.com/t01fe27088aa20d3ded.png">
+  
+    <link rel="alternate" href="/atom.xml" title="mileOfSunshine" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">mileOfSunshine</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2019-12-30-seeking-the-balance-in-framework-design" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/30/2019-12-30-seeking-the-balance-in-framework-design/" class="article-date">
+  <time datetime="2019-12-30T00:00:00.000Z" itemprop="datePublished">2019-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      读“在框架设计中寻求平衡”
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今年 JSConf.Asia 会议上，Vue.js 的作者 @尤雨溪 在关于 前端框架设计取舍 上作了分享。 分享主要从两个部分展开介绍： 职责范围（Scope）和 渲染机制（Render Mechanism）。</p>
+<h4 id="职责范围"><a href="#职责范围" class="headerlink" title="职责范围"></a>职责范围</h4><p>小的职责范围具有很好的灵活度，但关于构建抽象上要求开发者有自主学习能力。相反，大的职责范围致力于提供抽象概念，倘若抽象不适用，想改变时，却缺乏灵活度。</p>
+<p>Vue 在职责范围这个问题的处理方式上，采取了渐进式。</p>
+<p><img src="https://p1.ssl.qhimg.com/t01fe27088aa20d3ded.png"></p>
+<p>通过渐进的方式来选择特性，让更多的人专注于开发，而不是学习一堆在当前开发中可能不需要的概念。对于当前一些问题，开发者仍然能通过文档来获取一些解决方案。</p>
+<p>这种渐进式一来让 Vue 也存在着大职责范围中的统一维护面问题；二来 Vue 生态也无法像小职责范围那样的多样化。</p>
+<a id="more"></a>
+
+<h4 id="渲染机制"><a href="#渲染机制" class="headerlink" title="渲染机制"></a>渲染机制</h4><p>JSX 具有完整的 JavaScript 表现力，但由于渲染函数的动态特性使其难以优化。模板的约束允许编译器对你的意图作做预判，从而给它更多的空间执行优化；但因受限于模板语法，从而失去了 JavaScript 表达能力。</p>
+<p>单纯取舍不能解决问题，Vue 在渲染机制方面选择了 VDOM 结合模板编译，在模板编译上入手优化，引入了SVELTE，只对动态节点作 VDOM Diff 算法，从而提高了运行速度。</p>
+<p><img src="https://p1.ssl.qhimg.com/t01352166f663a62c22.png" alt="svelte-logo-horizontal.svg"></p>
+<p>接下来看看 SVELTE 是怎么处理的。</p>
+<p>场景1：只有一个动态节点</p>
+<p><img src="https://p3.ssl.qhimg.com/t01712c2274c39bc718.png" alt="image"></p>
+<p>当模板中只有一个动态节点时，整个节点结构是静态的、不会改变，我们只需直接更新 message 字符串这一个动态节点。</p>
+<p>场景2：存在结构指令</p>
+<p><img src="https://p1.ssl.qhimg.com/t01514e25d142756025.png" alt="v-if Demo"></p>
+<p>若存在结构指令 <code>v-if</code>，此时这个节点可能存在或可能不存在。处理办法是进行拆分，以 <code>v-if</code> 为界拆分成两个嵌套块。 </p>
+<ul>
+<li><code>v-if</code> 外部：是一个静态节点结构，只有 <code>v-if</code> 这一个动态节点</li>
+<li><code>v-if</code> 内部：也是一个静态节点结构，只有 <code>&#123;&#123; message &#125;&#125;</code> 一个动态节点</li>
+</ul>
+<p>唯一要处理的就是将每个块内的动态节点数组扁平化。</p>
+<blockquote>
+<p>数组扁平化是指将一个多维数组变为一维数组</p>
+</blockquote>
+<p><img src="https://p5.ssl.qhimg.com/t01df369a48ee8b05df.png" alt="v-for Demo"></p>
+<p>又或者存在的是结构指令 <code>v-for</code>，处理方式也是一样，将代码拆分成嵌套块…</p>
+<p><img src="https://p5.ssl.qhimg.com/t01a85190317eae945e.png" alt="more v-if, v-for Demo"></p>
+<p>若模板中存在多个 <code>v-if</code>、<code>v-for</code>，亦是如此。以结构指令为界，将模板拆分成嵌套块。每个块内的节点结构是静态的，动态节点维护在一个单一扁平化数组中。</p>
+<p><img src="https://p1.ssl.qhimg.com/t015cf5539238c56211.png" alt="Block Tree"></p>
+<p><img src="https://p1.ssl.qhimg.com/t01dc325e2cba4ce2e2.png" alt="Block Tree Demo"></p>
+<p>假设这个区块树存在上图的节点，那么得出的扁平化数组（结构指令 v-if, v-for 等本身也可以看出一个节点）为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">B5: [node5, node6, node7]</span><br><span class="line">B4: [node1, node2, node3, node4]</span><br><span class="line">B3: [B5]</span><br><span class="line">B2: [B4]</span><br><span class="line">B1: [B2, B3]</span><br></pre></td></tr></table></figure>
+<p>如此一来，对于同一模板的Diff， vue2.x 和 vue3.x 在做法上就存在比较大的差异。vue2.x 会做一个完整的 Diff 操作，而 vue3.x 是比较一个单一扁平化数组中的文本是否发生变化。有实验表明，vue3.0 中使用的新的编译策略的速度比 vue2.x 快了6倍多。虽说是个实验数据，但或多或少，vue3 都是更快。</p>
+<p><img src="https://p1.ssl.qhimg.com/t015efdcb0ccb5fb4a3.png" alt="实验数据"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>最后，我们回到本次分享中的话题。通过 @尤雨溪 的分享，我们能感受到他在框架设计中是如何寻求平衡的，这对我们今后的框架设计存在着许多借鉴意义。</p>
+<p>如何获取一个最佳平衡点，我们都曾有过努力寻找最佳的方式来解决问题的经历，我想这就是一个寻求最佳平衡点的过程。这个最佳方式不仅能解决现有问题，并且与后期的发展也一致，在我看来，这应该就是最佳平衡点。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/12/30/2019-12-30-seeking-the-balance-in-framework-design/" data-id="ckhea21z500090uwx1jtk5c11" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/" rel="tag">框架设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/01/2020-09-01-pick-embeddable-markdown-editor/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          你想 pick 哪款嵌入式 Markdown 编辑器?
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/16/2019-01-16-vue-and-react-multiplex/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue 和 React 的状态逻辑复用方案</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E5%BA%94%E7%94%A8/" rel="tag">快应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/" rel="tag">框架设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/%E5%BF%AB%E5%BA%94%E7%94%A8/" style="font-size: 10px;">快应用</a> <a href="/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">框架设计</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/01/2020-09-01-pick-embeddable-markdown-editor/">你想 pick 哪款嵌入式 Markdown 编辑器?</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/30/2019-12-30-seeking-the-balance-in-framework-design/">读“在框架设计中寻求平衡”</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/16/2019-01-16-vue-and-react-multiplex/">Vue 和 React 的状态逻辑复用方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/2018-12-11-about-chrome-devtools/">不为人知的Chrome devtools!</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/07/2018-09-07-quickapp-oppo-account/">快应用-开通oppo账号服务艰辛之路</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 mileOfSunshine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
