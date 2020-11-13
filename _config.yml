@@ -106,3 +106,8 @@ theme: fexo
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
 
+
+search:
+  path: search.json
+  source: all # other values: posts, pages 
+  trim_html: false

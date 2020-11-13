@@ -565,6 +565,13 @@ hexo-renderer-stylus@^2.0.0:
     nib "^1.1.2"
     stylus "^0.54.8"
 
+hexo-search@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/hexo-search/-/hexo-search-1.0.5.tgz#91958d5157824254e9ae1976a15ee2b1b8b54884"
+  integrity sha512-AdQuV2rnz5GiG3ruWUx68cpGKk9AUJ+jGs0sjqr97HoMVi3g5AHPQTy+Vm3V5XsoQKRan/6E5wSKj+jFZDkB9Q==
+  dependencies:
+    utils-merge "^1.0.0"
+
 hexo-server@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/hexo-server/-/hexo-server-2.0.0.tgz#1ad92cc8a7d3528fec6ffa65ff8453f242f7983f"
@@ -1212,7 +1219,7 @@ urix@^0.1.0:
   resolved "https://registry.npmjs.org/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
 
-utils-merge@1.0.1:
+utils-merge@1.0.1, utils-merge@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
