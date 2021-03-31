@@ -103,3 +103,8 @@ fail:   code = 200, data = generic error
 
 
 *此文只是记录快应用账号接入的过程，仅供借鉴，随着快应用的发展，各家厂商产品的完善，大家可能不会像笔者这般纠结，如能帮助到大家，庆幸写下此文。*
+
+
+> 本文作者： mileOfSunshine
+> 本文链接： https://mileofsunshine.github.io/2018/09/07/2018-09-07-quickapp-oppo-account/
+> 版权声明：文章是原创作品。转载请注明出处！

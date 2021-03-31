@@ -165,3 +165,8 @@ Vuex, Mixins, hooks, HOC 都是在二级上进行高度封装，考验开发者�
 > 推荐文章
 [精读《怎么用 React Hooks 造轮子》](https://github.com/dt-fe/weekly/blob/master/80.%E7%B2%BE%E8%AF%BB%E3%80%8A%E6%80%8E%E4%B9%88%E7%94%A8%20React%20Hooks%20%E9%80%A0%E8%BD%AE%E5%AD%90%E3%80%8B.md)
 [30分钟精通React Hooks](https://juejin.im/post/5be3ea136fb9a049f9121014)
+
+
+> 本文作者： mileOfSunshine
+> 本文链接： https://mileofsunshine.github.io/2019/01/16/2019-01-16-vue-and-react-multiplex/
+> 版权声明：文章是原创作品。转载请注明出处！

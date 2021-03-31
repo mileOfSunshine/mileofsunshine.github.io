@@ -80,3 +80,8 @@ tag: Chrome
 单词我们都认识，能不能学好就靠你自己啦...前面推荐的`Console API Reference`和`Command Line Reference` 已经是中文文档了哈，莫慌莫慌...
 
 ![加油！](https://user-images.githubusercontent.com/17926741/98777155-32d5d400-242b-11eb-9a0d-91a3854d0450.jpg)
+
+
+> 本文作者： mileOfSunshine
+> 本文链接： https://mileofsunshine.github.io/2018/12/11/2018-12-11-about-chrome-devtools/
+> 版权声明：文章是原创作品。转载请注明出处！

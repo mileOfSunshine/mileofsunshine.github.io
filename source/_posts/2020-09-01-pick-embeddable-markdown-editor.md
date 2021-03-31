@@ -176,3 +176,7 @@ export default function App() {
 
 推荐了这么多款，总有一款适合你，快点来Pick吧！！！
 
+
+> 本文作者： mileOfSunshine
+> 本文链接： https://mileofsunshine.github.io/2020/09/01/2020-09-01-pick-embeddable-markdown-editor/
+> 版权声明：文章是原创作品。转载请注明出处！

@@ -419,3 +419,8 @@ https://npmjs.com/package/vue-cli
 http://zhaozhiming.github.io/blog/2018/01/08/create-react-app-override-webpack-config/
 https://segmentfault.com/a/1190000012581869#articleHeader5
 http://www.css88.com/archives/8405
+
+
+> 本文作者： mileOfSunshine
+> 本文链接： https://mileofsunshine.github.io/2018/08/06/2018-08-06-dont-miss-vue-cli3/
+> 版权声明：文章是原创作品。转载请注明出处！
