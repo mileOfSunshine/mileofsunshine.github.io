@@ -161,7 +161,7 @@ views.children = formatRouter(views.children);
 
 最终效果如下，除了*首页*和*主题3*页面都进行了缓存。
 
-![Video_2022-05-18_160009.gif](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1fba176b66124751a3a7f870c52aeb20~tplv-k3u1fbpfcp-watermark.image?)
+![Video_2022-05-18_160009.gif](https://p5.ssl.qhimg.com/t013c3e43df8e602339.gif)
 
 [完整代码](https://github.com/mileOfSunshine/vue3-keep-alive-flat-router)
 
@@ -325,14 +325,14 @@ export default {
 </script>
 ```
 
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1ec34f6f40c74df0916eaf6fb4ab6172~tplv-k3u1fbpfcp-watermark.image?)
+![image.png](https://p4.ssl.qhimg.com/t01ff1538703210bf5b.png)
 
 
-![最终的caches](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4bddfd80267b49bfbd4b9d18a8871e52~tplv-k3u1fbpfcp-watermark.image?)
+![最终的caches](https://p1.ssl.qhimg.com/t01abe37ab73bae5a93.png)
 
 最终效果如下，除了*首页*和*主题3*页面都进行了缓存。但有个地方比较怪异，就是*主题2-1*页面出现了两个 【返回】功能。那是因为 `NestRouterView` 嵌套所致，你可以通过设置 prop 的方式来达到页面统一。
 
-![ok.gif](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3bd84d197df4f2b989182cd8af6c76a~tplv-k3u1fbpfcp-watermark.image?)
+![ok.gif](https://p5.ssl.qhimg.com/t0182688d79af5139f7.gif)
 
 
 ```js
@@ -361,7 +361,7 @@ export default {
 ```
 
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5cf3284d26234106aa89f96d1af529ba~tplv-k3u1fbpfcp-watermark.image?)
+![image.png](https://p0.ssl.qhimg.com/t01e18fa49273e3cd2b.png)
 
 [完整代码](https://github.com/mileOfSunshine/vue3-keep-alive-nest-router)
 

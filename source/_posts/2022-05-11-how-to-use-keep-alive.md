@@ -154,7 +154,7 @@ export default {
 
 ```
 
-![Video_2022-05-13_150716.gif](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/901a1218ecb048939212f5a939a3ec16~tplv-k3u1fbpfcp-watermark.image?)
+![Video_2022-05-13_150716.gif](https://p3.ssl.qhimg.com/t0151aaba2eb41530ee.gif)
 
 [点击查看效果](https://codepen.io/mileofsunshine/pen/jOZMQBr)
 
@@ -190,7 +190,7 @@ export default {
 </script>
 ```
 
-![2.gif](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/01308958f9bf4fb79664636ff9f34a77~tplv-k3u1fbpfcp-watermark.image?)
+![2.gif](https://p2.ssl.qhimg.com/t018cd776ed9e3e4d71.gif)
 
 [点击查看效果](https://codesandbox.io/s/vue3xia-de-keep-alivezhi-includeshi-li-iwocbh?file=/src/App.vue)
 
