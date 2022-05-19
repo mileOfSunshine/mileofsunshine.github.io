@@ -373,3 +373,8 @@ export default {
 若你在使用 keep-alive 中有疑惑，可移步姊妹篇《[看keep-alive如何在项目中失效](https://mileofsunshine.github.io/2022/05/11/2022-05-11-how-to-use-keep-alive/)》
 
 看过姊妹篇的朋友可能记得小编说过，vue-router 的 name 属性是用于路由跳转，不是用于 keep-alive，但在本文的方法却取了 vue-router 的 name 用于 include 中。这是因为小编统一了组件和 vue-router 的 name，更有利于项目的维护。
+
+
+> 本文作者： mileOfSunshine
+> 本文链接： https://mileofsunshine.github.io/2022/05/19/2022-05-19-keep-alive/
+> 版权声明：文章是原创作品。转载请注明出处！

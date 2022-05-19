@@ -284,3 +284,9 @@ const routes = [
 - 需要缓存的组件都写 `name` 属性，杜绝匿名组件；
 - 认清 `keep-alive` 和 `vue-router`的关系，杜绝乱用 `name`；
 - 面对多层 `router-view` 嵌套，找准 `keep-alive` 位置；
+
+
+
+> 本文作者： mileOfSunshine
+> 本文链接： https://mileofsunshine.github.io/2022/05/11/2022-05-11-how-to-use-keep-alive/
+> 版权声明：文章是原创作品。转载请注明出处！
